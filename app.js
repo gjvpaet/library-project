@@ -11,9 +11,6 @@ const app = express();
 
 const userRoutes = require('./routes/users');
 const bookRoutes = require('./routes/books');
-const productRoutes = require('./routes/products');
-const inventoryRoutes = require('./routes/inventory');
-const transactionRoutes = require('./routes/transactions');
 
 mongoose.connect('mongodb://127.0.0.1/library');
 
@@ -28,9 +25,6 @@ app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
 
 app.use('/api/users', userRoutes);
 app.use('/api/books', bookRoutes);  
-app.use('/api/products', productRoutes);
-app.use('/api/inventory', inventoryRoutes);
-app.use('/api/transactions', transactionRoutes);
 
 app.locals.siteUrl = config.siteUrl;
 
